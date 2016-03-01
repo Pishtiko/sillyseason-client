@@ -9,6 +9,11 @@ import {Headers} from 'angular2/http';
 export class HttpService {
 	constructor(private _http: Http) {}
 
+	isSignedIn(): Observable<any> {
+		return this._http.get('http://localhost:3001/')
+			.map(res => res.json());
+	}
+
 	getPosts(): Observable<any> {
 		return this._http.get('http://jsonplaceholder.typicode.com/posts')
 			.map(res => res.json());
@@ -17,7 +22,7 @@ export class HttpService {
 	createPost(post: {title: string, body: string, userId: number}): Observable<any> {
 		const body = JSON.stringify(post);
 		let headers = new Headers();
-		headers.append('Contnent-Type', 'application/x-www-urlencoded');
+		headers.append('Content-Type', 'application/x-www-urlencoded');
 		return this._http.post('http://jsonplaceholder.typicode.com/posts', body, {headers: headers
 		}).map(res => res.json());
 	}

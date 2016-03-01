@@ -1,3 +1,19 @@
+<header>
+	<nav>
+		<p>Silly Season Fantasy League</p>
+		<a [routerLink]="['Welcome']">Welcome</a>
+<!-- 		<div *ngIf="onIsSignedIn()"> -->
+			<input type="text" id="email" #email placeholder="Email">
+			<input type="text" id="password" #password placeholder="Password">
+			<button (click)="onSignIn(email.value, password.value)">Sign In</button>
+<!-- 		</div> -->
+		<a [routerLink]="['About']">About</a>
+	</nav>
+</header>
+<div>
+	<router-outlet></router-outlet>
+</div>
+
 <div>
 	<div class="input">
 		<label for="title">Title</label>
@@ -13,5 +29,6 @@
 	</div>
 	<button (click)="onPost(title.value, body.value, userId.value)">Post Data</button>
 	<button (click)="onGetPosts()">Get all Posts</button>
+	<button (click)="onIsSignedIn()">Is signed in?</button>
 	<p>Response: {{response | json}}</p>
 </div>
