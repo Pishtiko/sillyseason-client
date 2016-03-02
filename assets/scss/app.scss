@@ -1,3 +1,5 @@
+$greenColor: #526F35;
+
 body {
   padding: 0;
   margin: 0;
@@ -24,6 +26,20 @@ body {
 	border: 1px solid #526F35;
 }
 
+.btn {
+  border: 1px solid $greenColor;
+  background-color: $greenColor;
+  color: white;
+  padding: 4px 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  display: inline-block;
+  transition: background-color 0.2s;
+  font-weight: bold;
+  font-family: "Roboto", Arial, sans-serif;
+  cursor: pointer;
+}
+
 .nav-btn {
 	background-color: white;
 	color: #526F35;
@@ -33,3 +49,49 @@ body {
 	background-color: #526F35;
 	color: white;
 }
+
+.list {
+  border: 1px solid #ccc;
+  background-color: #eee;
+  margin: 0 -4px;
+  padding: 4px;
+  box-sizing: border-box;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    //border: 1px solid black;
+    box-shadow: 1px 2px 1px #aaa;
+    background-color: white;
+    padding: 5px;
+    margin: 5px 0;
+    height: 32px;
+    cursor: pointer;
+
+    .img {
+      width: 30%;
+      display: inline-block;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 50px;
+    }
+
+    .text {
+      display: inline-block;
+      vertical-align: top;
+      font-weight: bold;
+      font-size: 1.15em;
+    }
+  }
+
+  li:hover {
+    background-color: #f5f5f5;
+  }
+}
+

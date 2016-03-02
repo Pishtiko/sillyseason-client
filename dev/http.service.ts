@@ -14,6 +14,11 @@ export class HttpService {
 			.map(res => res.json());
 	}
 
+	getLeagues(): Observable<any> {
+		return this._http.get('http://localhost:3001/leagues')
+			.map(res => res.json());
+	}
+
 	getPosts(): Observable<any> {
 		return this._http.get('http://jsonplaceholder.typicode.com/posts')
 			.map(res => res.json());

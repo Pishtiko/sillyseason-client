@@ -4,15 +4,15 @@
 			<label>Sign In</label>
 			<input type="text" id="email" #email placeholder="Email">
 			<input type="text" id="password" #password placeholder="Password">
-			<button (click)="onSignIn(email.value, password.value)">Sign In</button>
+			<button class="btn" (click)="onSignIn(email.value, password.value)">Sign In</button>
 		</div>
 		<div>
 			<br><br>
 			<label>Or Create a Team and Join a League</label>
-			<button (click)="onCreateTeam()" id="create-team">Create Team</button>
+			<button class="btn" (click)="onCreateTeam()" id="create-team">Create Team</button>
 		</div>
 		<div *ngIf="isSignedIn">
-			<button (click)="onLogout()">Logout</button>
+			<button class="btn" (click)="onLogout()">Logout</button>
 		</div>
 	</nav>
 </header>

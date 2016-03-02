@@ -1,1 +1,7 @@
 <h3>Leagues</h3>
+<div class="list">
+	<ul>
+		<li *ngFor="#league of leagues" (click)="onSelectLeague(league)" ><b>{{league.league.league_name}}</b><br>{{league.teams}} Teams, Created by {{league.owner.name}}</li>
+	</ul>
+</div>
+{{leagues | json}}

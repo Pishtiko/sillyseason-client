@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
 	ngOnInit():any {
 		this._httpService.isSignedIn()
 			.subscribe(
-				response => this.isSignedIn = response[0].isSignedIn,
+				response => this.isSignedIn = response.isSignedIn,
 				error => console.log("ngOnInit error:", error)
 			)
 	}
@@ -57,6 +57,12 @@ export class AppComponent implements OnInit {
 			);
 	}
 }
+
+
+
+
+
+
 
 
 
