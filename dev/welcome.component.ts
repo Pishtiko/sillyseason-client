@@ -1,23 +1,22 @@
 import {Component} from 'angular2/core';
-import {OnInit} from 'angular2/core';
-import {HttpService} from "./http.service";
+import {LeaguesComponent} from "./leagues.component";
+import {AboutComponent} from "./about.component";
 
 @Component({
 	selector: 'ss-welcome',
 	templateUrl: 'templates/welcome.html',
+	directives: [LeaguesComponent, AboutComponent],
+
 })
 
- // implements OnInit
 export class WelcomeComponent {
+	leagueOrAbout: string;
 
-	response: string;
-	constructor(private _httpService: HttpService) {}
+	onLeagueOrAbout(leagueOrAbout: string) {
+		this.leagueOrAbout = leagueOrAbout;
+	}
 
-	// ngOnInit():any {
-	// 	this._httpService.isSignedIn()
-	// 		.subscribe(
-	// 			response => this.response = response,
-	// 			error => console.log("onGetPosts error:", error)
-	// 		)
-	// }
+	onCreateTeam() {
+
+	}
 }

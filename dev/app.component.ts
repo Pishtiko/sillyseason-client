@@ -2,8 +2,9 @@ import {Component} from 'angular2/core';
 import {HttpService} from "./http.service";
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import {RouteConfig} from 'angular2/router';
+import {OnInit} from 'angular2/core';
 import {WelcomeComponent} from "./welcome.component";
-import {AboutComponent} from "./about.component";
+
 
 @Component({
     selector: 'sillyseason',
@@ -14,19 +15,32 @@ import {AboutComponent} from "./about.component";
 
 @RouteConfig([
 	{path: '/welcome', name: 'Welcome', component: WelcomeComponent, useAsDefault: true},
-	{path: '/about', name: 'About', component: AboutComponent},
 ])
 
-export class AppComponent {
+
+export class AppComponent implements OnInit {
 	response: string;
+	isSignedIn: boolean;
 	constructor(private _httpService: HttpService) {}
+
+	ngOnInit():any {
+		this._httpService.isSignedIn()
+			.subscribe(
+				response => this.isSignedIn = response[0].isSignedIn,
+				error => console.log("ngOnInit error:", error)
+			)
+	}
+
 
 	onSignIn(email: string, password: string) {
 
 	}
 
+	onLogout() {
+		
+	}
+	
 	onIsSignedIn() {
-		// check if user is signed in, return false if signed in
 		this._httpService.isSignedIn()
 			.subscribe(
 				response => this.response = response,
@@ -34,14 +48,6 @@ export class AppComponent {
 			)
 	}
 
-
-	onGetPosts() {
-		this._httpService.getPosts()
-			.subscribe(
-				response => this.response = response,
-				error => console.log("onGetPosts error:", error)
-			)
-	}
 
 	onPost(title: string, body: string, userId: string) {
 		this._httpService.createPost({title: title, body: body, userId: +userId})
@@ -51,6 +57,8 @@ export class AppComponent {
 			);
 	}
 }
+
+
 
 
 

@@ -1,2 +1,32 @@
-This is the welcome template
-<h2>Response: {{response | json}}</h2>
+<header>
+	<nav>
+		<div *ngIf="!isSignedIn">
+			<label>Sign In</label>
+			<input type="text" id="email" #email placeholder="Email">
+			<input type="text" id="password" #password placeholder="Password">
+			<button (click)="onSignIn(email.value, password.value)">Sign In</button>
+		</div>
+		<div>
+			<br><br>
+			<label>Or Create a Team and Join a League</label>
+			<button (click)="onCreateTeam()" id="create-team">Create Team</button>
+		</div>
+		<div *ngIf="isSignedIn">
+			<button (click)="onLogout()">Logout</button>
+		</div>
+	</nav>
+</header>
+<div class="leagues-about">
+	<nav>
+		<button class="nav-btn" [class.active-btn]="leagueOrAbout !== 'about'" (click)="onLeagueOrAbout('leagues')">Leagues</button>
+		<button class="nav-btn" [class.active-btn]="leagueOrAbout === 'about'" (click)="onLeagueOrAbout('about')">About</button>
+	</nav>
+	<ss-leagues *ngIf="leagueOrAbout !== 'about'"></ss-leagues>
+	<ss-about *ngIf="leagueOrAbout === 'about'"></ss-about>
+</div>
+<div>
+	<br><hr><br>
+	<button (click)="onPost(title.value, body.value, userId.value)">Post Data</button>
+
+	<p>Response: {{response | json}}</p>
+</div>

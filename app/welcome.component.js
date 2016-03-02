@@ -1,4 +1,4 @@
-System.register(['angular2/core', "./http.service"], function(exports_1, context_1) {
+System.register(['angular2/core', "./leagues.component", "./about.component"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,27 +10,35 @@ System.register(['angular2/core', "./http.service"], function(exports_1, context
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_service_1;
+    var core_1, leagues_component_1, about_component_1;
     var WelcomeComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (http_service_1_1) {
-                http_service_1 = http_service_1_1;
+            function (leagues_component_1_1) {
+                leagues_component_1 = leagues_component_1_1;
+            },
+            function (about_component_1_1) {
+                about_component_1 = about_component_1_1;
             }],
         execute: function() {
             WelcomeComponent = (function () {
-                function WelcomeComponent(_httpService) {
-                    this._httpService = _httpService;
+                function WelcomeComponent() {
                 }
+                WelcomeComponent.prototype.onLeagueOrAbout = function (leagueOrAbout) {
+                    this.leagueOrAbout = leagueOrAbout;
+                };
+                WelcomeComponent.prototype.onCreateTeam = function () {
+                };
                 WelcomeComponent = __decorate([
                     core_1.Component({
                         selector: 'ss-welcome',
                         templateUrl: 'templates/welcome.html',
+                        directives: [leagues_component_1.LeaguesComponent, about_component_1.AboutComponent],
                     }), 
-                    __metadata('design:paramtypes', [http_service_1.HttpService])
+                    __metadata('design:paramtypes', [])
                 ], WelcomeComponent);
                 return WelcomeComponent;
             }());
@@ -39,4 +47,4 @@ System.register(['angular2/core', "./http.service"], function(exports_1, context
     }
 });
 
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlbGNvbWUuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O1lBVUE7Z0JBR0MsMEJBQW9CLFlBQXlCO29CQUF6QixpQkFBWSxHQUFaLFlBQVksQ0FBYTtnQkFBRyxDQUFDO2dCQVRsRDtvQkFBQyxnQkFBUyxDQUFDO3dCQUNWLFFBQVEsRUFBRSxZQUFZO3dCQUN0QixXQUFXLEVBQUUsd0JBQXdCO3FCQUNyQyxDQUFDOztvQ0FBQTtnQkFlRix1QkFBQztZQUFELENBWkEsQUFZQyxJQUFBO1lBWkQsK0NBWUMsQ0FBQSIsImZpbGUiOiJ3ZWxjb21lLmNvbXBvbmVudC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7Q29tcG9uZW50fSBmcm9tICdhbmd1bGFyMi9jb3JlJztcbmltcG9ydCB7T25Jbml0fSBmcm9tICdhbmd1bGFyMi9jb3JlJztcbmltcG9ydCB7SHR0cFNlcnZpY2V9IGZyb20gXCIuL2h0dHAuc2VydmljZVwiO1xuXG5AQ29tcG9uZW50KHtcblx0c2VsZWN0b3I6ICdzcy13ZWxjb21lJyxcblx0dGVtcGxhdGVVcmw6ICd0ZW1wbGF0ZXMvd2VsY29tZS5odG1sJyxcbn0pXG5cbiAvLyBpbXBsZW1lbnRzIE9uSW5pdFxuZXhwb3J0IGNsYXNzIFdlbGNvbWVDb21wb25lbnQge1xuXG5cdHJlc3BvbnNlOiBzdHJpbmc7XG5cdGNvbnN0cnVjdG9yKHByaXZhdGUgX2h0dHBTZXJ2aWNlOiBIdHRwU2VydmljZSkge31cblxuXHQvLyBuZ09uSW5pdCgpOmFueSB7XG5cdC8vIFx0dGhpcy5faHR0cFNlcnZpY2UuaXNTaWduZWRJbigpXG5cdC8vIFx0XHQuc3Vic2NyaWJlKFxuXHQvLyBcdFx0XHRyZXNwb25zZSA9PiB0aGlzLnJlc3BvbnNlID0gcmVzcG9uc2UsXG5cdC8vIFx0XHRcdGVycm9yID0+IGNvbnNvbGUubG9nKFwib25HZXRQb3N0cyBlcnJvcjpcIiwgZXJyb3IpXG5cdC8vIFx0XHQpXG5cdC8vIH1cbn0iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlbGNvbWUuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O1lBV0E7Z0JBQUE7Z0JBVUEsQ0FBQztnQkFQQSwwQ0FBZSxHQUFmLFVBQWdCLGFBQXFCO29CQUNwQyxJQUFJLENBQUMsYUFBYSxHQUFHLGFBQWEsQ0FBQztnQkFDcEMsQ0FBQztnQkFFRCx1Q0FBWSxHQUFaO2dCQUVBLENBQUM7Z0JBaEJGO29CQUFDLGdCQUFTLENBQUM7d0JBQ1YsUUFBUSxFQUFFLFlBQVk7d0JBQ3RCLFdBQVcsRUFBRSx3QkFBd0I7d0JBQ3JDLFVBQVUsRUFBRSxDQUFDLG9DQUFnQixFQUFFLGdDQUFjLENBQUM7cUJBRTlDLENBQUM7O29DQUFBO2dCQVlGLHVCQUFDO1lBQUQsQ0FWQSxBQVVDLElBQUE7WUFWRCwrQ0FVQyxDQUFBIiwiZmlsZSI6IndlbGNvbWUuY29tcG9uZW50LmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtDb21wb25lbnR9IGZyb20gJ2FuZ3VsYXIyL2NvcmUnO1xuaW1wb3J0IHtMZWFndWVzQ29tcG9uZW50fSBmcm9tIFwiLi9sZWFndWVzLmNvbXBvbmVudFwiO1xuaW1wb3J0IHtBYm91dENvbXBvbmVudH0gZnJvbSBcIi4vYWJvdXQuY29tcG9uZW50XCI7XG5cbkBDb21wb25lbnQoe1xuXHRzZWxlY3RvcjogJ3NzLXdlbGNvbWUnLFxuXHR0ZW1wbGF0ZVVybDogJ3RlbXBsYXRlcy93ZWxjb21lLmh0bWwnLFxuXHRkaXJlY3RpdmVzOiBbTGVhZ3Vlc0NvbXBvbmVudCwgQWJvdXRDb21wb25lbnRdLFxuXG59KVxuXG5leHBvcnQgY2xhc3MgV2VsY29tZUNvbXBvbmVudCB7XG5cdGxlYWd1ZU9yQWJvdXQ6IHN0cmluZztcblxuXHRvbkxlYWd1ZU9yQWJvdXQobGVhZ3VlT3JBYm91dDogc3RyaW5nKSB7XG5cdFx0dGhpcy5sZWFndWVPckFib3V0ID0gbGVhZ3VlT3JBYm91dDtcblx0fVxuXG5cdG9uQ3JlYXRlVGVhbSgpIHtcblxuXHR9XG59Il0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9
