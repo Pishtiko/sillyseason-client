@@ -20,6 +20,8 @@ export class LeaguesComponent {
 	onSelectLeague(league) {
 		console.log("onSelectLeague", league);
 	}
+
+
 }
 
 // response => console.log("ngOnInit response:", response[0].league.league_name),

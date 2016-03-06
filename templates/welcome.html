@@ -17,7 +17,7 @@
 	</nav>
 </header>
 <div class="leagues-about">
-	<nav>
+	<nav class="leagues-about-nav">
 		<button class="nav-btn" [class.active-btn]="leagueOrAbout !== 'about'" (click)="onLeagueOrAbout('leagues')">Leagues</button>
 		<button class="nav-btn" [class.active-btn]="leagueOrAbout === 'about'" (click)="onLeagueOrAbout('about')">About</button>
 	</nav>

@@ -26,6 +26,10 @@ body {
 	border: 1px solid #526F35;
 }
 
+.leagues-about-nav {
+	padding-bottom: 4px;
+}
+
 .btn {
   border: 1px solid $greenColor;
   background-color: $greenColor;
@@ -67,9 +71,9 @@ body {
     //border: 1px solid black;
     box-shadow: 1px 2px 1px #aaa;
     background-color: white;
-    padding: 5px;
-    margin: 5px 0;
-    height: 32px;
+    padding: 4px;
+    margin: 4px 0;
+    /*height: 32px;*/
     cursor: pointer;
 
     .img {

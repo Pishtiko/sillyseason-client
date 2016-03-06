@@ -32,13 +32,7 @@ export class AppComponent implements OnInit {
 	}
 
 
-	onSignIn(email: string, password: string) {
 
-	}
-
-	onLogout() {
-		
-	}
 	
 	onIsSignedIn() {
 		this._httpService.isSignedIn()
@@ -48,15 +42,10 @@ export class AppComponent implements OnInit {
 			)
 	}
 
-
-	onPost(title: string, body: string, userId: string) {
-		this._httpService.createPost({title: title, body: body, userId: +userId})
-			.subscribe(
-				response => this.response = response,
-				error => console.log("onPost error:", error)
-			);
-	}
 }
+
+
+
 
 
 
