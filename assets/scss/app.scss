@@ -99,3 +99,14 @@ body {
   }
 }
 
+.logout {
+  cursor: pointer;
+  display: block;
+  float: right;
+  padding-right: 8px;
+  a:hover {
+    color: #f5f5f5;
+    text-decoration: underline;
+  }
+}
+
