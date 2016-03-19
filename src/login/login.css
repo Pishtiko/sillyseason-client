@@ -1,3 +1,130 @@
-.login {
-  width: 40%;
+.border {
+	border: 2px solid white;
 }
+
+.login {
+	display: inline-block;
+  width: 100%;
+  height: 40px;
+  color: white;
+  background-color: #526f35; /* Green color */
+  padding: 4px;
+}
+
+.sillyseason {
+	font-size: 20px;
+  line-height: 40px;
+  vertical-align: center
+}
+
+.login form {
+	margin-top: 2px;
+	float: right;
+	height: 40px;		
+}
+.login input {
+  color: black;
+
+}
+
+.login-btn {
+  background-color: #fff;
+  color: #526f35;
+  border-radius: 8px;
+}
+
+.login-btn:hover {
+	color: silver;
+}
+
+.signup {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  float: right;
+  font-size: 14px;
+  line-height: 40px;
+  padding-left: 4px;
+ 	/*margin-top: 3px;*/
+}
+
+.signup:hover {
+	color: silver;
+}
+
+.nav-btn {
+  background-color: #fff;
+  color: #526f35;
+  height: 30px;
+  top: 0;
+}
+
+.active-btn {
+  background-color: #526f35;
+  color: #fff;
+  height: 40px;
+  top: 0;
+  z-index: -1;
+  border: none;
+  border-radius: 3px 3px 0 0;
+}
+
+.leagues-about {
+	background-color: #526f35;
+	padding: 4px;
+	color: white;
+}
+
+.league-about h3 {
+	/*margin-top: 3px;*/
+}
+
+
+.leagues-about-nav {
+/*  padding-bottom: 4px;*/
+}
+.leagues-about-title {
+	margin-top: 10px;
+}
+/*--- Leagues tab ---*/
+.list {
+  border: 1px solid #ccc;
+  background-color: #eee;
+  margin: 0 -4px;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+.list ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list li {
+  //border: 1px solid #000;
+  box-shadow: 1px 2px 1px #aaa;
+  background-color: #fff;
+  padding: 4px;
+  margin: 4px 0;
+  cursor: pointer;
+  color: black;
+}
+
+
+/*--- About tab ---*/
+
+
+@media (max-width: 600px) {
+	.login {
+	  height: 80px;
+	}
+	.login form {
+		margin-top: 0;	
+	}
+
+
+
+}
+
+

@@ -11,7 +11,7 @@ let template = require('./app.html');
 @Component({
   selector: 'silly-app',
   template: template,
-  directives: [ LoggedInRouterOutlet ]
+  directives: [ LoggedInRouterOutlet ],
 })
 @RouteConfig([
   { path: '/', redirectTo: ['/Home'] },

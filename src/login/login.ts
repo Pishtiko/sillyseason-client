@@ -6,14 +6,14 @@ import { ContentHeaders } from '../common/headers';
 import { LeaguesComponent } from '../loginLeagues/loginLeagues';
 import { AboutComponent } from '../about/about';
 
-let styles   = require('./login.css');
-let template = require('./login.html');
+let styles  = require('./login.css');
+let template    = require('./login.html');
 
 @Component({
   selector: 'login',
   directives: [RouterLink, CORE_DIRECTIVES, FORM_DIRECTIVES, LeaguesComponent, AboutComponent],
   template: template,
-  styles: [ styles ]
+  styles: [ styles ],
 })
 export class Login {
   leagueOrAbout: string;

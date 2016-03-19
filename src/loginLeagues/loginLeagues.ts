@@ -1,7 +1,7 @@
 import { Component } from 'angular2/core';
 import { HttpService } from '../common/http.service';
 
-let styles   = require('../css/style.css');
+let styles   = require('../login/login.css');
 let template = require('./loginLeagues.html');
 
 @Component({
