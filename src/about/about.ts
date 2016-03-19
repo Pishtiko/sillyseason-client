@@ -1,8 +1,10 @@
 import {Component} from 'angular2/core';
 
+let template = require('./about.html');
+
 @Component({
 	selector: 'ss-about',
-	templateUrl: 'templates/about.html',
+	template: template,
 })
 
 export class AboutComponent {

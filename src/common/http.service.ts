@@ -1,12 +1,15 @@
-import {Injectable} from 'angular2/core';
-import {Http} from 'angular2/http';
-import {Observable} from 'rxjs/Observable';
+import { Injectable } from 'angular2/core';
+import { Http } from 'angular2/http';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
-import {Headers} from 'angular2/http';
+import { Headers } from 'angular2/http';
+import { ContentHeaders } from './headers';
 
 @Injectable()
 
 export class HttpService {
+	// create a constant for the server url
+
 	constructor(private _http: Http) {}
 
 	isSignedIn(): Observable<any> {
@@ -21,9 +24,9 @@ export class HttpService {
 
 	signIn(post: {email: string, password: string}): Observable<any> {
 		const body = JSON.stringify(post);
-		let headers = new Headers();
-		headers.append('Content-Type', 'application/x-www-urlencoded');
-		return this._http.post('http://localhost:3001/sessions', body, {headers: headers
+		// let headers = new Headers();
+		// headers.append('Content-Type', 'application/x-www-urlencoded');
+		return this._http.post('http://localhost:3001/sessions/create', body, {headers: ContentHeaders
 		}).map(res => res.json());
 	}
 }

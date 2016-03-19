@@ -1,0 +1,51 @@
+<!-- <div class="login jumbotron center-block">
+  <h1>Login</h1>
+  <form role="form" (submit)="login($event, email.value, password.value)">
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="text" #email class="form-control" id="email" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" #password class="form-control" id="password" placeholder="Password">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+    <a href="/signup">Click here to Signup</a>
+</form>
+</div> -->
+
+
+<header>
+  <nav>
+    <div class="banner">
+      <form role="form" (submit)="onSignIn($event, email.value, password.value)">
+        <label>Sign In</label>
+        <input type="text" id="email" #email placeholder="Email">
+        <input type="text" id="password" #password placeholder="Password">
+        <button class="btn" type="submit">Sign In</button>
+      </form>
+    </div>
+    <div>
+      <br><br>
+      <label>Or Create a Team and Join a League</label>
+      <button class="btn" (click)="onCreateTeam()" id="create-team">Create Team</button>
+    </div>
+    <div *ngIf="isSignedIn">
+      <button class="btn" (click)="onLogout()">Logout</button>
+    </div>
+  </nav>
+</header>
+<div class="leagues-about">
+  <nav class="leagues-about-nav">
+    <button class="nav-btn" [class.active-btn]="leagueOrAbout !== 'about'" (click)="onLeagueOrAbout('leagues')">Leagues</button>
+    <button class="nav-btn" [class.active-btn]="leagueOrAbout === 'about'" (click)="onLeagueOrAbout('about')">About</button>
+  </nav>
+  <ss-leagues *ngIf="leagueOrAbout !== 'about'"></ss-leagues>
+  <ss-about *ngIf="leagueOrAbout === 'about'"></ss-about>
+</div>
+<!-- <div>
+  <br><hr><br>
+  <button (click)="onPost(title.value, body.value, userId.value)">Post Data</button>
+
+  <p>Response: {{response | json}}</p>
+</div> -->
