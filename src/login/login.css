@@ -24,7 +24,6 @@
 }
 .login input {
   color: black;
-
 }
 
 .login-btn {
@@ -45,7 +44,6 @@
   font-size: 14px;
   line-height: 40px;
   padding-left: 4px;
- 	/*margin-top: 3px;*/
 }
 
 .signup:hover {
@@ -67,6 +65,7 @@
   z-index: -1;
   border: none;
   border-radius: 3px 3px 0 0;
+  outline: none;
 }
 
 .leagues-about {
@@ -75,17 +74,10 @@
 	color: white;
 }
 
-.league-about h3 {
-	/*margin-top: 3px;*/
-}
-
-
-.leagues-about-nav {
-/*  padding-bottom: 4px;*/
-}
 .leagues-about-title {
 	margin-top: 10px;
 }
+
 /*--- Leagues tab ---*/
 .list {
   border: 1px solid #ccc;
@@ -111,9 +103,20 @@
   color: black;
 }
 
+.leagueTable {
+	margin-top: 8px;
+}
 
-/*--- About tab ---*/
+.leagueTable th {
+	font-weight: bold;
+	border: 1px solid black;
+	padding: 0 4px;
+}
 
+.leagueTable td {
+	border: 1px solid black;
+	padding: 0 4px;
+}
 
 @media (max-width: 600px) {
 	.login {

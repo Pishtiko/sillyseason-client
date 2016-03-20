@@ -1,7 +1,22 @@
-<h3 class="leagues-about-title">Active Leagues</h3>
+<h3 class="leagues-about-title">Silly Season Fantasy Leagues</h3>
 <div class="list">
 	<ul>
-		<li *ngFor="#league of leagues" (click)="onSelectLeague(league)" ><b>{{league.league.league_name}}</b><br>{{league.teams}} {{league.teams > 1 ? "Teams" : "Team"}}, Created by {{league.owner.name}}</li>
+		<li *ngFor="#league of leagues" (click)="onSelectLeague(league.league.id)">
+			<b>{{league.league.league_name}}</b>
+			<br>{{league.teams}} {{league.teams > 1 ? "Teams" : "Team"}}, Created by {{league.owner.name}}
+			<table [style.display]="selectedLeague === league.league.id ? 'block' : 'none'" class="leagueTable">
+				<tr>
+					<th>Team</th><th>Manager</th><th>Money</th><th>Points</th><th>GW-Points</th>
+				</tr>
+				<tr *ngFor="#team of league.users">
+					<td>{{team.team_name}}</td>
+					<td>{{team.id}}</td>
+					<td>{{team.money | currency:'USD':true:'4.0-0'}}</td>
+					<td>{{team.totpoints}}</td>
+					<td>{{team.id}}</td>
+				</tr>
+			</table>
+		</li>
 	</ul>
 </div>
 {{leagues | json}}

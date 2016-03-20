@@ -7,12 +7,14 @@ let template = require('./loginLeagues.html');
 @Component({
 	selector: 'ss-leagues',
 	template: template,
-	providers: [HttpService],
+	providers: [ HttpService ],
 	styles: [ styles ],
 })
 
 export class LeaguesComponent {
 	leagues: string;
+	selectedLeague = 1; // change to null after development
+
 
 	constructor(private _httpService: HttpService) {}
 	ngOnInit(): any {
@@ -23,8 +25,11 @@ export class LeaguesComponent {
 			);
 	}
 	onSelectLeague(league) {
-		console.log('onSelectLeague', league);
+		if (this.selectedLeague === league) {
+			this.selectedLeague = null;
+		} else {
+			this.selectedLeague = league;
+		}
 	}
-
 
 }
