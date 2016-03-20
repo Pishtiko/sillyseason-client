@@ -59,6 +59,8 @@
 
 .active-btn {
   background-color: #526f35;
+/*  -webkit-transition: background-color .2s;
+  transition: background-color .2s;*/
   color: #fff;
   height: 40px;
   top: 0;

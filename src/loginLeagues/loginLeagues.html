@@ -6,17 +6,23 @@
 			<br>{{league.teams}} {{league.teams > 1 ? "Teams" : "Team"}}, Created by {{league.owner.name}}
 			<table [style.display]="selectedLeague === league.league.id ? 'block' : 'none'" class="leagueTable">
 				<tr>
-					<th>Team</th><th>Manager</th><th>Money</th><th>Points</th><th>GW-Points</th>
+					<th>Team</th>
+					<th>Manager</th>
+					<th>Points</th>
+					<th>GW-Points</th>
+					<th>Money<br>
+						Value of Players</th>
 				</tr>
-				<tr *ngFor="#team of league.users">
+				<tr *ngFor="#team of league.users | orderby: '-totpoints'">
 					<td>{{team.team_name}}</td>
 					<td>{{team.id}}</td>
-					<td>{{team.money | currency:'USD':true:'4.0-0'}}</td>
 					<td>{{team.totpoints}}</td>
 					<td>{{team.id}}</td>
+					<td>{{team.money | currency:'GBP':true:'4.0-0'}} <br>
+					{{team.money | currency:'GBP':true:'4.0-0'}}</td>
 				</tr>
 			</table>
 		</li>
 	</ul>
 </div>
-{{leagues | json}}
+

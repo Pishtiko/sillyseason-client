@@ -1,5 +1,6 @@
 import { Component } from 'angular2/core';
 import { HttpService } from '../common/http.service';
+import { OrderByPipe } from '../common/orderByPipe';
 
 let styles   = require('../login/login.css');
 let template = require('./loginLeagues.html');
@@ -9,7 +10,10 @@ let template = require('./loginLeagues.html');
 	template: template,
 	providers: [ HttpService ],
 	styles: [ styles ],
+	pipes: [ OrderByPipe ],
 })
+
+
 
 export class LeaguesComponent {
 	leagues: string;
