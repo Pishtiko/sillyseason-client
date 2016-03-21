@@ -107,17 +107,27 @@
 
 .leagueTable {
 	margin-top: 8px;
+	font-size: 12px;
 }
 
 .leagueTable th {
 	font-weight: bold;
 	border: 1px solid black;
 	padding: 0 4px;
+	text-align: center;
 }
 
 .leagueTable td {
 	border: 1px solid black;
 	padding: 0 4px;
+}
+
+.table-string {
+
+}
+
+.table-number {
+	text-align: right;
 }
 
 @media (max-width: 600px) {

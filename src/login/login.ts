@@ -17,6 +17,7 @@ let template    = require('./login.html');
 })
 export class Login {
   leagueOrAbout: string;
+  createTeam = true;
 
   constructor(public router: Router, public http: Http) {}
 
@@ -40,8 +41,30 @@ export class Login {
       );
   }
 
-  signup(event) {
+  onCreateTeam(event) {
     event.preventDefault();
-    this.router.parent.navigateByUrl('/signup');
+    this.createTeam = !this.createTeam;
+    this.leagueOrAbout = 'leagues';
+    // this.router.parent.navigateByUrl('/signup');
+  }
+
+  onCreateLeague(event, newLeague) {
+    event.preventDefault();
+    console.log(newLeague);
+    let body = JSON.stringify(newLeague);
+    this.http.post('http://localhost:3001/users', body, { headers: ContentHeaders })
+      .subscribe(
+        response => {
+          console.log('+++ response:', response.json().id_token);
+          // var token = response._body;
+          // console.log("jwt_decode(response):", jwt_decode(response));
+          localStorage.setItem('jwt', response.json().id_token);
+          this.router.parent.navigateByUrl('/home');
+        },
+        error => {
+          // alert(error.text());
+          console.log(error);
+        }
+      );
   }
 }

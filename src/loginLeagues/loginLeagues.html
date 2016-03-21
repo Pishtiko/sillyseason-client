@@ -5,21 +5,23 @@
 			<b>{{league.league.league_name}}</b>
 			<br>{{league.teams}} {{league.teams > 1 ? "Teams" : "Team"}}, Created by {{league.owner.name}}
 			<table [style.display]="selectedLeague === league.league.id ? 'block' : 'none'" class="leagueTable">
-				<tr>
+				<tr class="table-headers">
 					<th>Team</th>
 					<th>Manager</th>
-					<th>Points</th>
-					<th>GW-Points</th>
-					<th>Money<br>
-						Value of Players</th>
+					<th>Pts</th>
+					<th>GW</th>
+					<th>In the Bank<br>
+						Team Value</th>
 				</tr>
 				<tr *ngFor="#team of league.users | orderby: '-totpoints'">
-					<td>{{team.team_name}}</td>
-					<td>{{team.id}}</td>
-					<td>{{team.totpoints}}</td>
-					<td>{{team.id}}</td>
-					<td>{{team.money | currency:'GBP':true:'4.0-0'}} <br>
-					{{team.money | currency:'GBP':true:'4.0-0'}}</td>
+					<td class="table-string"><b>{{team.team_name}}</b></td>
+					<td class="table-string">{{team.name}}</td>
+					<td class="table-number"><b>{{team.totpoints}}</b></td>
+					<td class="table-number">{{team.gwpoints}}</td>
+					<td class="table-number">
+						{{team.money | currency:'GBP':true:'4.0-0'}}<br>
+						{{team.playervalue | currency:'GBP':true:'4.0-0'}}
+					</td>
 				</tr>
 			</table>
 		</li>

@@ -17,7 +17,7 @@ let template = require('./loginLeagues.html');
 
 export class LeaguesComponent {
 	leagues: string;
-	selectedLeague = 1; // change to null after development
+	selectedLeague = null;
 
 
 	constructor(private _httpService: HttpService) {}

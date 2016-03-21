@@ -1,17 +1,33 @@
 <header class="login">
     <span class="sillyseason">
       Silly Season
-      <a class="signup" (click)="onCreateTeam()" id="create-team">Create Team</a>
+      <a class="signup" (click)="onCreateTeam($event)" id="create-team">Create Team</a>
     </span>
-    <form role="form" (submit)="onSignIn($event, email.value, password.value)">
-      <input type="text" id="email" #email placeholder="Email">
-      <input type="text" id="password" #password placeholder="Password">
+    <form role="form" (submit)="onSignIn($event, loginEmail.value, loginPassword.value)">
+      <input type="text" id="loginEmail" #loginEmail placeholder="Email">
+      <input type="text" id="loginPassword" #loginPassword placeholder="Password">
       <button class="login-btn" type="submit">Sign In</button>
     </form>
 </header>
-<div>
-  <br>
-</div>
+<div><br>
+  <section [style.display]="createTeam ? 'block' : 'none'" class="create-team">
+    <form role="form" (submit)="onCreateLeague($event, {name: newLeagueManager.value, team_name: newLeagueTeamName.value, email: newLeagueEmail.value, password: newLeagueLoginPassword.value, league_name: newLeagueName.value, league_password: newLeaguePassword.value})">
+      <label>Enter Your Name And Choose a Team Name<br>
+        <input type="text" id="newLeagueManager" #newLeagueManager placeholder="Your Name">
+        <input type="text" id="newLeagueTeamName" #newLeagueTeamName placeholder="Team Name">
+      </label>
+      <label>Enter Email And Password To Create a New Account<br>
+        <input type="email" id="newLeagueEmail" #newLeagueEmail placeholder="Email">
+        <input type="password" id="newLeagueLoginPassword" #newLeagueLoginPassword placeholder="Login Password">
+      </label>
+      <label>Choose a League Name and Optional Password<br>
+        <input type="text" id="newLeagueName" #newLeagueName placeholder="New League Name">
+        <input type="password" id="newLeaguePassword" #newLeaguePassword placeholder="League Password"><br>
+      </label><br>
+      <button class="login-btn" type="submit">Create New League</button>
+    </form>
+  </section>
+<br></div>
 <div class="">
   <nav class="leagues-about-nav">
     <button class="nav-btn" [class.active-btn]="leagueOrAbout !== 'about'" (click)="onLeagueOrAbout('leagues')">Leagues</button>
