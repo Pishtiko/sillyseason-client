@@ -11,7 +11,7 @@
 </header>
 <div><br>
   <section [style.display]="createTeam ? 'block' : 'none'" class="create-team">
-    <form role="form" (submit)="onCreateLeague($event, {name: newLeagueManager.value, team_name: newLeagueTeamName.value, email: newLeagueEmail.value, password: newLeagueLoginPassword.value, league_name: newLeagueName.value, league_password: newLeaguePassword.value})">
+    <form role="form" (submit)="onCreateLeague($event, {name: newLeagueManager.value, team_name: newLeagueTeamName.value, email: newLeagueEmail.value, password: newLeagueLoginPassword.value})">
       <label>Enter Your Name And Choose a Team Name<br>
         <input type="text" id="newLeagueManager" #newLeagueManager placeholder="Your Name">
         <input type="text" id="newLeagueTeamName" #newLeagueTeamName placeholder="Team Name">
@@ -20,11 +20,8 @@
         <input type="email" id="newLeagueEmail" #newLeagueEmail placeholder="Email">
         <input type="password" id="newLeagueLoginPassword" #newLeagueLoginPassword placeholder="Login Password">
       </label>
-      <label>Choose a League Name and Optional Password<br>
-        <input type="text" id="newLeagueName" #newLeagueName placeholder="New League Name">
-        <input type="password" id="newLeaguePassword" #newLeaguePassword placeholder="League Password"><br>
-      </label><br>
-      <button class="login-btn" type="submit">Create New League</button>
+      <br>
+      <button class="login-btn" type="submit">Create Team</button>
     </form>
   </section>
 <br></div>

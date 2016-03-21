@@ -44,14 +44,13 @@ export class Login {
   onCreateTeam(event) {
     event.preventDefault();
     this.createTeam = !this.createTeam;
-    this.leagueOrAbout = 'leagues';
     // this.router.parent.navigateByUrl('/signup');
   }
 
-  onCreateLeague(event, newLeague) {
+  onCreateLeague(event, newUser) {
     event.preventDefault();
-    console.log(newLeague);
-    let body = JSON.stringify(newLeague);
+    console.log(newUser);
+    let body = JSON.stringify(newUser);
     this.http.post('http://localhost:3001/users', body, { headers: ContentHeaders })
       .subscribe(
         response => {
@@ -63,6 +62,7 @@ export class Login {
         },
         error => {
           // alert(error.text());
+          // Create more userfriendly feedback for failed user creation
           console.log(error);
         }
       );
