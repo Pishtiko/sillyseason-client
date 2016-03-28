@@ -1,14 +1,31 @@
-<div>
-  <div class="home jumbotron centered">
-    <h1>Welcome to the angular2 authentication sample!</h1>
-    <h2 *ngIf="jwt">Your JWT is:</h2>
-    <pre *ngIf="jwt" class="jwt"><code>{{ jwt }}</code></pre>
-    <pre *ngIf="jwt" class="jwt"><code>{{ decodedJwt | json }}</code></pre>
-    <p>Click any of the buttons to call an API and get a response</p>
-    <p><a class="btn btn-primary btn-lg" role="button" (click)="callAnonymousApi()">Call Anonymous API</a></p>
-    <p><a class="btn btn-primary btn-lg" role="button" (click)="callSecuredApi()">Call Secure API</a></p>
-    <p><a class="btn btn-primary btn-lg" role="button" (click)="logout()">Logout</a></p>
-    <h2 *ngIf="response">The response of calling the <span class="red">{{api}}</span> API is:</h2>
-    <h3 *ngIf="response">{{response}}</h3>
-  </div>
-</div>
+<header>
+    <span class="sillyseason">
+      Silly Season - <b>{{decodedJwt.team_name}}</b> {{decodedJwt.name}} 
+      <a class="logout" (click)="onLogout()" id="logout">Logout</a>
+    </span>
+</header>
+decodedJwt: {{decodedJwt | json}}
+<!-- <section *ngIf="jwt">
+  *ngIf="jwt" This doesn't always show when arriving at page
+</section> -->
+<!-- <section *ngIf="!decodedJwt.league_id">
+<ss-join-league [style.display]="decodedJwt.league_id ? 'none' : 'block'"></ss-join-league>
+</section> -->
+<ss-join-league *ngIf="!decodedJwt.league_id"></ss-join-league>
+<!-- <section [style.display]="decodedJwt.league_id ? 'block' : 'none'">
+  [style.display]="createTeam ? 'block' : 'none'"
+</section> -->
+<button (click)="refresh()">Refresh</button>
+<!-- <div class="home jumbotron centered">
+<h1>Welcome to the angular2 authentication sample!</h1>-->
+<!-- <h2 *ngIf="jwt">Your JWT is:</h2>
+<pre *ngIf="jwt" class="jwt"><code>{{ jwt }}</code></pre>
+<pre *ngIf="jwt" class="jwt"><code>{{ decodedJwt | json }}</code></pre>
+<p>Click any of the buttons to call an API and get a response</p>
+<p><a class="btn btn-primary btn-lg" role="button" (click)="callAnonymousApi()">Call Anonymous API</a></p>
+<p><a class="btn btn-primary btn-lg" role="button" (click)="callSecuredApi()">Call Secure API</a></p> -->
+<!-- <p><a class="btn btn-primary btn-lg" role="button" (click)="logout()">Logout</a></p> -->
+<h2 *ngIf="response">The response of calling the <span class="red">{{api}}</span> API is:</h2>
+<h3 *ngIf="response">{{response}}</h3>
+<!-- </div> -->
+

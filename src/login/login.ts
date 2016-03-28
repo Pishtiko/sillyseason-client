@@ -6,8 +6,8 @@ import { ContentHeaders } from '../common/headers';
 import { LeaguesComponent } from '../loginLeagues/loginLeagues';
 import { AboutComponent } from '../about/about';
 
-let styles  = require('./login.css');
-let template    = require('./login.html');
+let styles = require('./login.css');
+let template = require('./login.html');
 
 @Component({
   selector: 'login',
@@ -17,7 +17,7 @@ let template    = require('./login.html');
 })
 export class Login {
   leagueOrAbout: string;
-  createTeam = true;
+  createTeam = false;
 
   constructor(public router: Router, public http: Http) {}
 

@@ -31,6 +31,7 @@
     <button class="nav-btn" [class.active-btn]="leagueOrAbout === 'about'" (click)="onLeagueOrAbout('about')">About</button>
   </nav>
   <div class="leagues-about">
+    <!-- maybe change *ngIf to [style.display] instead so that leagues doesn't requery everything -->
     <ss-leagues *ngIf="leagueOrAbout !== 'about'"></ss-leagues>
     <ss-about *ngIf="leagueOrAbout === 'about'"></ss-about>
   </div>
